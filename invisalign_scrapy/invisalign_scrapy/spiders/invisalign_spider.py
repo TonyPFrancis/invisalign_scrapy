@@ -67,3 +67,12 @@ class InvisalignSpider(Spider):
                         with open('dropped.txt', 'a+') as d:
                             print "*** DROPPED item - %s"%(str(e))
                             d.write(zip_item+'\n')
+
+            else:
+                with open('invalid_json_zip.txt', 'a+') as d:
+                    print "*** INVALID JSON ZIP - %s"%(zip_item)
+                    d.write(zip_item+'\n')
+        else:
+            with open('invalid_json_zip.txt', 'a+') as d:
+                print "*** INVALID JSON ZIP - %s"%(zip_item)
+                d.write(zip_item+'\n')
