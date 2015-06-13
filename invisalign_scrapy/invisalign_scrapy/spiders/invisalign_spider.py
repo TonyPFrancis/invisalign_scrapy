@@ -1,6 +1,11 @@
-from scrapy import Spider
+from scrapy import Spider, Selector, log
+from scrapy.http import Request
 from scrapy.log import ScrapyFileLogObserver
-from scrapy import log
+import requests, json, re, urllib
+from time import sleep
+from invisalign_scrapy.items import InvisalignScrapyItem
+
+
 
 class InvisalignSpider(Spider):
     name = 'invisalign'
@@ -18,4 +23,9 @@ class InvisalignSpider(Spider):
         zip_file = open('CANADA_ZIPCODES.txt', 'r+')
         zip_list = filter(None, zip_file.read().split('\n'))
         for zip_item in zip_list:
-            url = 'https://maps.googleapis.com/maps/api/js/GeocodeService.Search'
+            print "*** zip_item"
+            print zip_item
+            geo_url = 'https://maps.google.com/?q=%s canada'%(zip_item)
+            
+
+
