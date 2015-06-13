@@ -76,3 +76,7 @@ class InvisalignSpider(Spider):
             with open('invalid_json_zip.txt', 'a+') as d:
                 print "*** INVALID JSON ZIP - %s"%(zip_item)
                 d.write(zip_item+'\n')
+
+    def create_item(self, result, zip_item):
+        name = result.get('FullName', '')
+        
