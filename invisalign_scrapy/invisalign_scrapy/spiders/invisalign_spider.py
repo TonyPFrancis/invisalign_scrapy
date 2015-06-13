@@ -86,3 +86,12 @@ class InvisalignSpider(Spider):
             type = 'General Dentist'
         elif type == 'C':
             type = 'Orthodontist'
+        category = result.get('SegmentCode', '')
+        if category == 1:
+            category = 'Top 1%'
+        elif category == 2:
+            category = 'Elite'
+        elif category == 3:
+            category = 'Premier'
+        elif category == 4:
+            category = 'Preferred'
