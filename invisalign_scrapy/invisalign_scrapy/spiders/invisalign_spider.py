@@ -27,6 +27,7 @@ class InvisalignSpider(Spider):
             print zip_item
             geo_url = 'https://maps.google.com/?q=%s canada'%(zip_item)
             map_url_content = requests.get(geo_url).content
-            sleep(3)            
+            sleep(3)
+            sell = Selector(text=map_url_content)      
 
 
