@@ -46,3 +46,4 @@ class InvisalignSpider(Spider):
                 meta_data = {'venue_latitude': venue_latitude,
                              'venue_longitude': venue_longitude,
                              'zip_code': zip_item}
+                yield Request(url = fetch_url, dont_filter=True, callback=self.parse_result, meta=meta_data)
