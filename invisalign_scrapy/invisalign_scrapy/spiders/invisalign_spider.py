@@ -102,3 +102,19 @@ class InvisalignSpider(Spider):
                                     category = category,
                                     zip = zip_item)
         return item
+
+    def item_check(self, item):
+        if not item['name']:
+            raise AssertionError('Name missing')
+        if not item['address']:
+            raise AssertionError('address missing')
+        if not item['phone']:
+            raise AssertionError('phone missing')
+        if not item['type']:
+            raise AssertionError('type missing')
+        if not item['category']:
+            raise AssertionError('category missing')
+        if not item['zip']:
+            raise AssertionError('zip missing')
+
+
