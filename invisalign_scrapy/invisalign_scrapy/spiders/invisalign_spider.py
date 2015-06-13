@@ -95,3 +95,10 @@ class InvisalignSpider(Spider):
             category = 'Premier'
         elif category == 4:
             category = 'Preferred'
+        item = InvisalignScrapyItem(name = name,
+                                    address = address,
+                                    phone = phone,
+                                    type = type,
+                                    category = category,
+                                    zip = zip_item)
+        return item
