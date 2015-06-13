@@ -41,3 +41,5 @@ class InvisalignSpider(Spider):
                     d.write(zip_item+'\n')
                 print "NO LATITUDE OR LONGITUDE"
                 break
+            else:
+                fetch_url = 'http://api.invisalign.com/svc/rd?pc=%s&cl=CA&lat=%s&lng=%s&it=us'%(zip_item, venue_latitude, venue_longitude)
