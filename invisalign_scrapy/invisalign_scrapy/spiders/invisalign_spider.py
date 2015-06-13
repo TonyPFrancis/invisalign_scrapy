@@ -55,3 +55,5 @@ class InvisalignSpider(Spider):
 
         json_data = json.loads(response.body)
         responseData = json_data.get('responseData', {})
+        if responseData:
+            results = responseData.get('results', [])
