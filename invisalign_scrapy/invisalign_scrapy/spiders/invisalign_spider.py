@@ -60,3 +60,10 @@ class InvisalignSpider(Spider):
             if results:
                 for result in results:
                     item = self.create_item(result, zip_item)
+                    try:
+                        self.item_check(item)
+                        yield item
+                    except Exception as e:
+                        with open('dropped.txt', 'a+') as d:
+                            print "*** DROPPED item - %s"%(str(e))
+                            d.write(zip_item+'\n')
