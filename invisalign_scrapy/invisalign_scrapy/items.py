@@ -16,3 +16,4 @@ class InvisalignScrapyItem(Item):
     phone = Field()
     type = Field()
     category = Field()
+    zip = Field()
