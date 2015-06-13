@@ -32,4 +32,4 @@ class InvisalignSpider(Spider):
             map_error_1 = sell.xpath(
                 '//div[@class="sp-error-msg"]|//div[@class="noprint res"]/div//div[contains(@id,"marker_B")]')
             latlong = ' '.join(sell.xpath('//script').extract()) if not map_error_1 else ''
-
+            lat_lng = re.findall(r'",\[(-?\d+\.?\d*),(-?\d+\.?\d*)\]\]', latlong, re.I)
