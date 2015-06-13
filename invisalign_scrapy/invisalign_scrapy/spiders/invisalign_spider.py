@@ -43,3 +43,6 @@ class InvisalignSpider(Spider):
                 break
             else:
                 fetch_url = 'http://api.invisalign.com/svc/rd?pc=%s&cl=CA&lat=%s&lng=%s&it=us'%(zip_item, venue_latitude, venue_longitude)
+                meta_data = {'venue_latitude': venue_latitude,
+                             'venue_longitude': venue_longitude,
+                             'zip_code': zip_item}
