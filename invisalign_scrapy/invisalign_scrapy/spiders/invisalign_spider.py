@@ -81,3 +81,8 @@ class InvisalignSpider(Spider):
         name = result.get('FullName', '')
         address = '. '.join(filter(None, [result.get('Line1', ''), result.get('Line2', ''), result.get('City', ''), result.get('State', ''), result.get('PostalCode', '')]))
         phone = result.get('OfficePhone', '')
+        type = result.get('DoctorType', '')
+        if type == 'D':
+            type = 'General Dentist'
+        elif type == 'C':
+            type = 'Orthodontist'
