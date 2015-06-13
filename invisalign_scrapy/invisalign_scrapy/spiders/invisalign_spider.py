@@ -52,3 +52,6 @@ class InvisalignSpider(Spider):
         sel = Selector(response)
         meta_data = response.meta
         zip_item = meta_data['zip_code']
+
+        json_data = json.loads(response.body)
+        responseData = json_data.get('responseData', {})
