@@ -33,3 +33,11 @@ class InvisalignSpider(Spider):
                 '//div[@class="sp-error-msg"]|//div[@class="noprint res"]/div//div[contains(@id,"marker_B")]')
             latlong = ' '.join(sell.xpath('//script').extract()) if not map_error_1 else ''
             lat_lng = re.findall(r'",\[(-?\d+\.?\d*),(-?\d+\.?\d*)\]\]', latlong, re.I)
+            venue_latitude, venue_longitude = lat_lng[0] if lat_lng else ('', '')
+            print venue_latitude, venue_longitude
+            if not venue_latitude or not venue_longitude:
+                with open('missing_lat_lng.txt', 'a+') as d:
+                    print "*** DROPPED ZIP - %s"%(zip_item)
+                    d.write(zip_item+'\n')
+                print "NO LATITUDE OR LONGITUDE"
+                break
