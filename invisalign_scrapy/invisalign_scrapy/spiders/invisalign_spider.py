@@ -57,3 +57,6 @@ class InvisalignSpider(Spider):
         responseData = json_data.get('responseData', {})
         if responseData:
             results = responseData.get('results', [])
+            if results:
+                for result in results:
+                    item = self.create_item(result, zip_item)
