@@ -28,6 +28,8 @@ class InvisalignSpider(Spider):
             geo_url = 'https://maps.google.com/?q=%s canada'%(zip_item)
             map_url_content = requests.get(geo_url).content
             sleep(3)
-            sell = Selector(text=map_url_content)      
+            sell = Selector(text=map_url_content)
+            map_error_1 = sell.xpath(
+                '//div[@class="sp-error-msg"]|//div[@class="noprint res"]/div//div[contains(@id,"marker_B")]')
 
 
