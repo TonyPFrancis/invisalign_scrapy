@@ -77,6 +77,7 @@ class InvisalignSpider(Spider):
     def create_item(self, result, zip_item):
         name = result.get('FullName', '')
         address = '. '.join(filter(None, [result.get('Line1', ''), result.get('Line2', ''), result.get('City', ''), result.get('State', ''), result.get('PostalCode', '')]))
+        address = address.replace(',', '.')
         phone = result.get('OfficePhone', '')
         type = result.get('DoctorType', '')
         if type == 'D':
