@@ -24,7 +24,11 @@ class InvisalignSpider(Spider):
             print "*** zip_item"
             print zip_item
             geo_url = 'https://maps.google.com/?q=%s canada'%(zip_item)
-            map_url_content = requests.get(geo_url).content
+            try:
+                map_url_content = requests.get(geo_url).content
+            except:
+                sleep(15)
+                map_url_content = requests.get(geo_url).content
             sleep(3)
             sell = Selector(text=map_url_content)
             map_error_1 = sell.xpath(
