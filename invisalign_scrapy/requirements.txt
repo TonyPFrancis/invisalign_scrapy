@@ -86,7 +86,7 @@ Twisted-Names==13.2.0
 Twisted-Web==13.2.0
 ubuntuone-storage-protocol==13.10
 unity-lens-photos==1.0
-urllib3==1.7.1
+urllib3==1.26.5
 virtualenv==1.11.6
 virtualenv-clone==0.2.5
 virtualenvwrapper==4.3.1
