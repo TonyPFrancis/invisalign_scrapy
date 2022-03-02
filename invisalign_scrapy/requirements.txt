@@ -68,7 +68,7 @@ reportlab==3.0
 requests==2.6.0
 requests-oauthlib==0.4.2
 rhythmbox-ubuntuone==13.10
-Scrapy==0.24.4
+Scrapy==1.8.2
 ScrapyStats==0.1
 SecretStorage==2.0.0
 selenium==2.44.0
