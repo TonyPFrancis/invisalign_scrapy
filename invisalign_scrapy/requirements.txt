@@ -64,7 +64,7 @@ pyxdg==0.25
 queuelib==1.2.2
 quora==0.1.18.3
 redis==2.10.3
-reportlab==3.0
+reportlab==3.5.55
 requests==2.6.0
 requests-oauthlib==0.4.2
 rhythmbox-ubuntuone==13.10
