@@ -27,7 +27,7 @@ lazr.restfulclient==0.13.3
 lazr.uri==1.0.3
 lockfile==0.8
 lxml==3.4.1
-Mako==0.9.1
+Mako==1.2.2
 mandrill==1.0.57
 MarkupSafe==0.18
 MySQL-python==1.2.5
